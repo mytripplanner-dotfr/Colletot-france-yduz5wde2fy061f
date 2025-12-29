@@ -1,0 +1,349 @@
+{
+  "pays": "France",
+  "drapeau": "🇫🇷",
+  "symbole": "🥐",
+  "titre": "Douceurs Normandes: Évasion Relaxante à Colletot",
+  "budget_total": "2200 €/pers",
+  "duree": "13 jours",
+  "temps_vol": "1h depuis Poirier, belgique",
+  "escale": "0",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée en Normandie et installation",
+      "legende": "Après un court vol et la récupération de votre véhicule, la route vous mènera à travers la campagne normande jusqu'à Colletot. Prenez le temps de vous installer et de profiter de la quiétude des lieux pour une première soirée relaxante.",
+      "lieu": "Colletot",
+      "activites": [
+        "<strong>🛬</strong>: Vol de Bruxelles (BRU) à Paris (CDG).",
+        "<strong>🚗</strong>: Prise en charge du véhicule de location à l'aéroport CDG.",
+        "<strong>🏡</strong>: Route vers Colletot et installation dans votre hébergement."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "À savoir",
+          "texte": "Le trajet en voiture de CDG à Colletot dure environ 2h. Prévoyez une pause si nécessaire."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🌳",
+      "titre": "Douceur de Colletot et ses environs",
+      "legende": "Commencez votre exploration par le charmant village de Colletot. Profitez d'une balade apaisante dans la campagne environnante, découvrez l'architecture locale et savourez un premier repas typiquement normand.",
+      "lieu": "Colletot",
+      "activites": [
+        "<strong>🚶‍♀️</strong>: Balade relaxante dans le village de Colletot. Découvrez ses maisons traditionnelles et son église.",
+        "<strong>🧺</strong>: Pique-nique ou déjeuner dans un restaurant local. Goûtez aux produits du terroir.",
+        "<strong>📖</strong>: Après-midi libre pour la lecture ou la détente. Profitez du calme de la campagne."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "🍽️",
+          "titre": "Gastronomie",
+          "texte": "Ne manquez pas de goûter au cidre et au Calvados, spécialités de la région."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "⛵",
+      "titre": "Charme intemporel de Honfleur",
+      "legende": "Plongez dans l'atmosphère pittoresque de Honfleur, son Vieux Bassin emblématique et ses ruelles pavées. Laissez-vous séduire par les galeries d'art et l'ambiance maritime de cette ville qui a inspiré tant d'artistes.",
+      "lieu": "Honfleur",
+      "activites": [
+        "<strong>🚶‍♂️</strong>: Flânerie autour du Vieux Bassin de Honfleur. Admirez les maisons hautes et étroites.",
+        "<strong>🎨</strong>: Visite de l'église Sainte-Catherine. Une église unique entièrement en bois.",
+        "<strong>☕</strong>: Pause gourmande dans un salon de thé. Dégustez une pâtisserie locale."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🅿️",
+          "titre": "Stationnement",
+          "texte": "Honfleur peut être très fréquentée. Prévoyez d'arriver tôt pour trouver facilement une place de parking."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🏖️",
+      "titre": "Élégance balnéaire de Deauville et Trouville",
+      "legende": "Découvrez le glamour de Deauville avec ses célèbres Planches et ses parasols colorés, puis traversez le pont pour l'authenticité de Trouville, son marché aux poissons et sa longue plage. Une journée entre chic et tradition.",
+      "lieu": "Deauville / Trouville",
+      "activites": [
+        "<strong>🚶‍♀️</strong>: Promenade sur les Planches de Deauville. Admirez les cabines de plage et l'architecture.",
+        "<strong>🐟</strong>: Déjeuner au marché aux poissons de Trouville. Savourez des fruits de mer frais.",
+        "<strong>🌊</strong>: Balade apaisante sur la plage de Trouville. Respirez l'air marin."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🛍️",
+          "titre": "Shopping",
+          "texte": "Deauville est réputée pour ses boutiques de luxe, parfait pour une petite séance de lèche-vitrine."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "⛰️",
+      "titre": "Majesté des falaises d'Étretat",
+      "legende": "Laissez-vous émerveiller par les falaises d'Étretat, des formations rocheuses spectaculaires sculptées par la mer. Profitez d'une balade douce sur les sentiers côtiers pour admirer ces paysages emblématiques.",
+      "lieu": "Étretat",
+      "activites": [
+        "<strong>🚶‍♂️</strong>: Balade sur la plage d'Étretat. Admirez la Porte d'Aval et l'Aiguille Creuse depuis le bas.",
+        "<strong>🌿</strong>: Montée douce vers la falaise d'Amont. Profitez de la vue panoramique sur les arches.",
+        "<strong>☕</strong>: Détente dans un café du village. Savourez l'ambiance après votre exploration."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "⚠️",
+          "titre": "Sécurité",
+          "texte": "Restez sur les sentiers balisés et ne vous approchez pas trop du bord des falaises pour votre sécurité."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "💆‍♀️",
+      "titre": "Journée de bien-être et relaxation",
+      "legende": "Offrez-vous une pause bien méritée avec une journée dédiée à la détente. Profitez d'un spa ou d'un centre de bien-être pour recharger vos batteries et vous ressourcer pleinement.",
+      "lieu": "Pont-Audemer / Environs de Colletot",
+      "activites": [
+        "<strong>🧖‍♀️</strong>: Matinée au spa ou centre de bien-être. Profitez des piscines, saunas et hammams.",
+        "<strong>🥗</strong>: Déjeuner léger et sain. Privilégiez les produits frais et locaux.",
+        "<strong>🧘‍♀️</strong>: Après-midi libre pour la lecture, la méditation ou une sieste. Laissez-vous porter par la sérénité."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "📍",
+          "titre": "Suggestion",
+          "texte": "Recherchez des spas ou centres de bien-être à Pont-Audemer ou dans les villes côtières comme Deauville pour des options variées."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "⛪",
+      "titre": "Immersion historique à Rouen",
+      "legende": "Explorez Rouen, la \"ville aux cent clochers\", avec sa majestueuse cathédrale Notre-Dame et ses rues médiévales. Suivez les traces de Jeanne d'Arc et imprégnez-vous de l'histoire riche de la capitale normande.",
+      "lieu": "Rouen",
+      "activites": [
+        "<strong>⛪</strong>: Visite de la Cathédrale Notre-Dame de Rouen. Admirez son architecture gothique.",
+        "<strong>🚶‍♀️</strong>: Balade dans le Gros-Horloge et les rues piétonnes. Découvrez les maisons à colombages.",
+        "<strong>🏛️</strong>: Visite du Musée des Beaux-Arts ou du Musée Jeanne d'Arc. Choisissez selon vos préférences."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "💡",
+          "titre": "Astuce",
+          "texte": "La Cathédrale de Rouen a inspiré Monet. Observez les variations de lumière sur sa façade."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🧀",
+      "titre": "Saveurs et paysages du Pays d'Auge",
+      "legende": "Partez à la découverte du Pays d'Auge, une région vallonnée parsemée de pommiers, de haras et de charmants villages. Dégustez les produits du terroir, du fromage au cidre, dans un cadre bucolique.",
+      "lieu": "Pays d'Auge",
+      "activites": [
+        "<strong>🚗</strong>: Route panoramique à travers le Pays d'Auge. Admirez les paysages verdoyants.",
+        "<strong>🍎</strong>: Visite d'une cidrerie ou d'une fromagerie. Dégustation de produits locaux (Camembert, Pont-l'Évêque).",
+        "<strong>🏘️</strong>: Exploration d'un village typique comme Beuvron-en-Auge. Classé parmi les \"Plus Beaux Villages de France\"."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "🎁",
+          "titre": "Souvenirs",
+          "texte": "Profitez-en pour acheter des produits locaux directement chez les producteurs."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🌊",
+      "titre": "Fécamp et la Côte d'Albâtre",
+      "legende": "Explorez Fécamp, ancienne cité des Ducs de Normandie, et son impressionnant Palais Bénédictine. Laissez-vous charmer par le port et les vues sur la Côte d'Albâtre, offrant des paysages marins apaisants.",
+      "lieu": "Fécamp",
+      "activites": [
+        "<strong>🏰</strong>: Visite du Palais Bénédictine. Découvrez son histoire et dégustez la liqueur.",
+        "<strong>🚶‍♀️</strong>: Balade sur le port de Fécamp. Observez les bateaux et l'ambiance maritime.",
+        "<strong>🌅</strong>: Point de vue sur la Côte d'Albâtre. Profitez des panoramas depuis les hauteurs."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "📜",
+          "titre": "Histoire",
+          "texte": "Le Palais Bénédictine est un chef-d'œuvre architectural qui abrite un musée et une distillerie."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🌸",
+      "titre": "Sérénité aux Jardins de Giverny",
+      "legende": "Immergez-vous dans l'univers de Claude Monet en visitant ses célèbres jardins à Giverny. Laissez-vous transporter par la beauté des nymphéas, du pont japonais et des allées fleuries, une véritable œuvre d'art vivante.",
+      "lieu": "Giverny",
+      "activites": [
+        "<strong>🎨</strong>: Visite de la Maison et des Jardins de Claude Monet. Admirez les nymphéas et le jardin clos.",
+        "<strong>🖼️</strong>: Exploration du Musée des Impressionnismes Giverny. Approfondissez votre connaissance du mouvement.",
+        "<strong>☕</strong>: Pause détente dans le village de Giverny. Profitez de l'ambiance artistique."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "🎟️",
+          "titre": "Réservation",
+          "texte": "Il est fortement recommandé de réserver vos billets pour les Jardins de Giverny à l'avance, surtout en haute saison."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "🦆",
+      "titre": "Nature et patrimoine à Pont-Audemer et Marais Vernier",
+      "legende": "Découvrez Pont-Audemer, surnommée la \"Venise Normande\" pour ses canaux, puis explorez la richesse naturelle du Marais Vernier, une zone humide unique abritant une faune et une flore exceptionnelles.",
+      "lieu": "Pont-Audemer / Marais Vernier",
+      "activites": [
+        "<strong>🛶</strong>: Balade le long des canaux de Pont-Audemer. Admirez les maisons à colombages.",
+        "<strong>🚶‍♀️</strong>: Randonnée douce ou observation des oiseaux dans le Marais Vernier. Profitez de la nature préservée.",
+        "<strong>🏡</strong>: Visite d'une chaumière typique du Marais Vernier. Découvrez l'habitat traditionnel."
+      ],
+      "illustration": "jour11.jpg",
+      "encarts": [
+        {
+          "symbole": "🔭",
+          "titre": "Observation",
+          "texte": "Le Marais Vernier est un site idéal pour l'observation des oiseaux migrateurs, n'oubliez pas vos jumelles."
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "😌",
+      "titre": "Douceur et souvenirs normands",
+      "legende": "Profitez de cette dernière journée pour revisiter un lieu coup de cœur, faire quelques achats de souvenirs ou simplement vous détendre dans la campagne normande. Une journée pour savourer les derniers instants de votre séjour.",
+      "lieu": "Colletot / Environs",
+      "activites": [
+        "<strong>🛍️</strong>: Achats de souvenirs locaux. Ramenez un peu de Normandie chez vous.",
+        "<strong>🚶‍♀️</strong>: Dernière balade relaxante. Profitez des paysages que vous avez aimés.",
+        "<strong>🍷</strong>: Dîner d'adieu dans un bon restaurant. Savourez une dernière fois la gastronomie locale."
+      ],
+      "illustration": "jour12.jpg",
+      "encarts": [
+        {
+          "symbole": "🎁",
+          "titre": "Idées cadeaux",
+          "texte": "Pensez aux produits du terroir comme le cidre, le Calvados, les fromages ou les confitures artisanales."
+        }
+      ]
+    },
+    {
+      "jour": 13,
+      "symbole": "🛫",
+      "titre": "Départ de Normandie",
+      "legende": "C'est le moment de quitter la belle Normandie. Après un dernier petit-déjeuner, vous prendrez la route vers l'aéroport de Paris CDG pour votre vol retour, la tête remplie de merveilleux souvenirs.",
+      "lieu": "Colletot -> Paris CDG",
+      "activites": [
+        "<strong>🍳</strong>: Petit-déjeuner à votre hébergement.",
+        "<strong>🚗</strong>: Route vers l'aéroport de Paris CDG. Restitution du véhicule de location.",
+        "<strong>🛫</strong>: Vol retour de Paris (CDG) à Bruxelles (BRU)."
+      ],
+      "illustration": "jour13.jpg",
+      "encarts": [
+        {
+          "symbole": "⛽",
+          "titre": "Retour voiture",
+          "texte": "Pensez à faire le plein de carburant avant de rendre votre véhicule de location à l'aéroport."
+        }
+      ]
+    }
+  ],
+  "detail_budget": [
+    {
+      "titre": "Budget vol:",
+      "legende": "A partir de 235 €/pers",
+      "symbole": "🛬"
+    },
+    {
+      "titre": "Budget transports:",
+      "legende": "Environ 400 €/pers (location voiture + essence)",
+      "symbole": "🚆"
+    },
+    {
+      "titre": "Budget repas:",
+      "legende": "Environ 600 €/pers (base 45€/jour)",
+      "symbole": "🥗"
+    },
+    {
+      "titre": "Budget logement:",
+      "legende": "Environ 715 €/pers (base 110€/nuit pour 2)",
+      "symbole": "🛏️"
+    },
+    {
+      "titre": "Budget activités:",
+      "legende": "Environ 250 €/pers",
+      "symbole": "🎭"
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Mai à Septembre",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Les températures en Normandie varient. Prévoir des couches de vêtements, un imperméable et des chaussures confortables pour la marche.",
+      "symbole": "🌦️"
+    },
+    {
+      "titre": "La voiture est essentielle pour explorer la Normandie. Les routes sont bien entretenues.",
+      "symbole": "🚗"
+    },
+    {
+      "titre": "La plupart des commerces acceptent les cartes bancaires. Avoir un peu de liquide peut être utile pour les petits marchés.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "Le réseau mobile est généralement bon. Le Wi-Fi est disponible dans la plupart des hébergements.",
+      "symbole": "📶"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Vols",
+      "titre": "Réserve ton vol",
+      "url": "https://www.kayak.fr/flights/BRU-CDG/2026-03-10/2026-03-23",
+      "symbole": "🛬"
+    },
+    {
+      "legende": "Infos officielles et inspirations",
+      "titre": "Normandie Tourisme",
+      "url": "https://www.normandie-tourisme.fr/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Location de voiture",
+      "titre": "Comparateur de location de voiture",
+      "url": "https://www.rentalcars.com/",
+      "symbole": "🚗"
+    },
+    {
+      "legende": "Météo",
+      "titre": "Météo France",
+      "url": "https://www.meteofrance.com/",
+      "symbole": "🌤️"
+    }
+  ]
+}
