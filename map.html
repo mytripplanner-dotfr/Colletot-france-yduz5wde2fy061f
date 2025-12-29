@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voyage - Colletot france</title>
+  <style>
+    :root { --primary: #1a73e8; --bg-sidebar: #ffffff; }
+    body { margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; display: flex; height: 100vh; overflow: hidden; color: #333; }
+    
+    /* Sidebar */
+    #sidebar { width: 380px; background: var(--bg-sidebar); height: 100%; overflow-y: auto; box-shadow: 4px 0 15px rgba(0,0,0,0.08); z-index: 10; display: flex; flex-direction: column; }
+    .sidebar-header { padding: 25px 20px; border-bottom: 1px solid #eee; background: #fff; position: sticky; top: 0; z-index: 2; }
+    #poi-content { padding: 20px; flex-grow: 1; }
+    
+    /* Map */
+    #map { flex: 1; height: 100%; }
+    
+    /* Filtres */
+    .filter-group { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+    .filter-btn { padding: 6px 14px; border: 1px solid #dfe1e5; border-radius: 20px; background: white; cursor: pointer; font-size: 13px; transition: 0.2s; }
+    .filter-btn:hover { background: #f1f3f4; }
+    .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    /* Détails du lieu */
+    .poi-detail img { width: 100%; border-radius: 12px; margin-bottom: 15px; display: block; background: #eee; min-height: 180px; object-fit: cover; }
+    .poi-detail h2 { margin: 0 0 10px 0; font-size: 22px; line-height: 1.3; }
+    .badge { display: inline-block; background: #f1f3f4; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; text-transform: uppercase; margin-bottom: 10px; margin-right: 5px; }
+    .badge-day { background: #e8f0fe; color: var(--primary); }
+    .poi-description { font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 25px; }
+    
+    .btn-group { display: flex; gap: 10px; }
+    .btn { flex: 1; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.2s; }
+    .btn-main { background: var(--primary); color: white; }
+    .btn-outline { border: 1px solid #dadce0; color: #1a73e8; }
+    .btn:hover { opacity: 0.9; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      body { flex-direction: column-reverse; }
+      #sidebar { width: 100%; height: 45%; }
+      #map { height: 55%; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="sidebar">
+    <div class="sidebar-header">
+      <h3 style="margin:0">Colletot france</h3>
+      <div class="filter-group" id="day-filters">
+        <button class="filter-btn active" onclick="filterByDay('all', this)">Tous</button>
+      </div>
+    </div>
+    <div id="poi-content">
+      <div style="text-align:center; margin-top:40px; color:#70757a;">
+        <p>Sélectionnez un point sur la carte pour explorer les détails.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+  <script>
+    let map, markerCluster;
+    let markersArray = [];
+    const locations = [{"lat":49.349972,"lng":0.6196539999999999,"name":"Colletot","jour":1,"titre":"Arrivée en Normandie et installation","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.349972,0.6196539999999999&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.349972,0.6196539999999999","aiImageUrl":"jour1.jpg"},{"lat":49.418762,"lng":0.233262,"name":"Honfleur","jour":3,"titre":"Charme intemporel de Honfleur","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.418762,0.233262&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.418762,0.233262","aiImageUrl":"jour3.jpg"},{"lat":49.353976,"lng":0.075122,"name":"Deauville / Trouville","jour":4,"titre":"Élégance balnéaire de Deauville et Trouville","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.353976,0.075122&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.353976,0.075122","aiImageUrl":"jour4.jpg"},{"lat":49.7070069,"lng":0.2055978,"name":"Étretat","jour":5,"titre":"Majesté des falaises d'Étretat","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.7070069,0.2055978&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.7070069,0.2055978","aiImageUrl":"jour5.jpg"},{"lat":49.349972,"lng":0.6196539999999999,"name":"Pont-Audemer / Environs de Colletot","jour":6,"titre":"Journée de bien-être et relaxation","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.349972,0.6196539999999999&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.349972,0.6196539999999999","aiImageUrl":"jour6.jpg"},{"lat":49.4435261,"lng":1.0984309,"name":"Rouen","jour":7,"titre":"Immersion historique à Rouen","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.4435261,1.0984309&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.4435261,1.0984309","aiImageUrl":"jour7.jpg"},{"lat":46.227638,"lng":2.213749,"name":"Pays d'Auge","jour":8,"titre":"Saveurs et paysages du Pays d'Auge","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=46.227638,2.213749&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=46.227638,2.213749","aiImageUrl":"jour8.jpg"},{"lat":49.755601,"lng":0.380774,"name":"Fécamp","jour":9,"titre":"Fécamp et la Côte d'Albâtre","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.755601,0.380774&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.755601,0.380774","aiImageUrl":"jour9.jpg"},{"lat":49.0766071,"lng":1.5290156,"name":"Giverny","jour":10,"titre":"Sérénité aux Jardins de Giverny","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.0766071,1.5290156&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.0766071,1.5290156","aiImageUrl":"jour10.jpg"},{"lat":49.354883,"lng":0.5142989,"name":"Pont-Audemer / Marais Vernier","jour":11,"titre":"Nature et patrimoine à Pont-Audemer et Marais Vernier","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.354883,0.5142989&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.354883,0.5142989","aiImageUrl":"jour11.jpg"},{"lat":49.349972,"lng":0.6196539999999999,"name":"Colletot / Environs","jour":12,"titre":"Douceur et souvenirs normands","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.349972,0.6196539999999999&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.349972,0.6196539999999999","aiImageUrl":"jour12.jpg"},{"lat":49.0078827,"lng":2.5507855,"name":"Colletot -> Paris CDG","jour":13,"titre":"Départ de Normandie","type":"activité","markerColor":"blue","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=49.0078827,2.5507855&key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=49.0078827,2.5507855","aiImageUrl":"jour13.jpg"}];
+
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: { lat: 49.11631656666666, lng: 0.8883331416666667 },
+        mapId: 'light_map_id', // Optionnel : utiliser un ID de style via la console Google Cloud
+        disableDefaultUI: false,
+        zoomControl: true,
+        streetViewControl: false,
+        mapTypeControl: false
+      });
+
+      // Création des filtres de jours
+      const days = [...new Set(locations.map(l => l.jour))].sort((a,b) => a - b);
+      const filterContainer = document.getElementById('day-filters');
+      days.forEach(day => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        btn.innerText = 'J' + day;
+        btn.onclick = function() { filterByDay(day, this); };
+        filterContainer.appendChild(btn);
+      });
+
+      // Icônes personnalisées par couleur
+      const getIcon = (color) => `http://maps.google.com/mapfiles/ms/icons/${color}-dot.png`;
+
+      locations.forEach(loc => {
+        const marker = new google.maps.Marker({
+          position: { lat: loc.lat, lng: loc.lng },
+          title: loc.name,
+          icon: getIcon(loc.markerColor),
+          label: { text: String(loc.jour), color: 'white', fontSize: '11px', fontWeight: 'bold' },
+          data: loc
+        });
+
+        marker.addListener('click', () => {
+          updateSidebar(loc);
+          map.panTo(marker.getPosition());
+        });
+
+        markersArray.push(marker);
+      });
+
+      markerCluster = new markerClusterer.MarkerClusterer({ map, markers: markersArray });
+    }
+
+    function updateSidebar(poi) {
+      const container = document.getElementById('poi-content');
+      container.innerHTML = `
+        <div class="poi-detail">
+          <div>
+            <span class="badge badge-day">Jour ${poi.jour}</span>
+            <span class="badge">${poi.type}</span>
+          </div>
+          <h2>${poi.name}</h2>
+          <img src="${poi.streetViewUrl}" alt="Aperçu">
+          <p class="poi-description">${poi.titre}</p>
+          <div class="btn-group">
+            <a href="https://www.google.com/maps/dir/?api=1&destination=${poi.lat},${poi.lng}" target="_blank" class="btn btn-main">S'y rendre</a>
+            <a href="${poi.streetViewLinkUrl}" target="_blank" class="btn btn-outline">Street View</a>
+          </div>
+        </div>
+      `;
+      if(window.innerWidth <= 768) document.getElementById('sidebar').scrollTo({top:0, behavior:'smooth'});
+    }
+
+    function filterByDay(day, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filtered = day === 'all' 
+        ? markersArray 
+        : markersArray.filter(m => m.data.jour === day);
+
+      markerCluster.clearMarkers();
+      markerCluster.addMarkers(filtered);
+
+      if (filtered.length > 0) {
+        const bounds = new google.maps.LatLngBounds();
+        filtered.forEach(m => bounds.extend(m.getPosition()));
+        map.fitBounds(bounds);
+        if (day !== 'all') map.setZoom(Math.min(map.getZoom(), 12));
+      }
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5WUNvRC9eOjHRLt92fs4hsp0Auje3aAI&callback=initMap"></script>
+</body>
+</html>
